@@ -1,3 +1,5 @@
 ﻿  Source-1B.cpp
+C:\Users\billp\OneDrive\Υπολογιστής\GLP\GraphicsLab1B\Project2A\Project2A\Source-1B.cpp(807,49): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\billp\OneDrive\Υπολογιστής\GLP\GraphicsLab1B\Project2A\Project2A\Source-1B.cpp(839,50): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Project2A.vcxproj -> C:\Users\billp\OneDrive\Υπολογιστής\GLP\GraphicsLab1B\Project2A\x64\Debug\Project2A.exe
