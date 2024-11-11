@@ -473,10 +473,10 @@ void keyCallbackCamera(GLFWwindow* window, int key, int scancode, int action, in
 		}
 
 		// Zoom in and out (move along the Z axis)
-		if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
+		if (glfwGetKey(window, GLFW_KEY_8) == GLFW_PRESS) {
 			zoomFactor -= 0.1f;  // zoom in
 		}
-		if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
+		if (glfwGetKey(window, GLFW_KEY_9) == GLFW_PRESS) {
 			zoomFactor += 0.1f;  // zoom out
 		}
 
@@ -700,7 +700,7 @@ int main(void)
 
 	for (size_t i = 0; i < mazeColorsA.size(); i += 4) {
 		mazeColorsA[i] = 1.0f;       // Red
-		mazeColorsA[i + 1] = 0.0f;   // Green
+		mazeColorsA[i + 1] = 1.0f;   // Green
 		mazeColorsA[i + 2] = 0.0f;   // Blue
 		mazeColorsA[i + 3] = 1.0f;   // Alpha
 	}
