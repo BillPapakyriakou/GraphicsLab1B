@@ -171,7 +171,7 @@ std::vector<float> verticesA;   // for storing playerA coords
 
 float C_x = -4.5f; // character x pos
 float C_y = 2.5f;  // character y pos
-float C_z = 0.0f;  // character z pos
+float C_z = 0.5f;  // character z pos
 
 GLuint vertexBufferPlayer;  // needed here instead of main because Player buffer
 GLuint vertexBufferMaze;    // is constantly being updated on keyCallbackPlayer method
@@ -277,7 +277,7 @@ void DrawPlayer() {
 	verticesA.clear();
 
 	float halfSize = 0.25f;  // Half of the cube's side length
-
+	/*
 	// Front face (two triangles)
 	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(0.25f);  // Top-left front
 	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(0.25f);  // Bottom-left front
@@ -331,6 +331,61 @@ void DrawPlayer() {
 	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(0.25f);  // Bottom-right front
 	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(-0.25f);  // Bottom-right back
 	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(-0.25f);  // Bottom-left back
+	*/
+
+	// Front face (two triangles)
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-left front
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-left front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-right front
+
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-left front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-right front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-right front
+
+	// Back face (two triangles)
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-left back
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-left back
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-right back
+
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-left back
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-right back
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-right back
+
+	// Left face
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-left front
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-left front
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-left back
+
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-left front
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-left back
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-left back
+
+	// Right face
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-right front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-right front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-right back
+
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-right front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-right back
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-right back
+
+	// Top face
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-left front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-right front
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-left back
+
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z + 0.25f);  // Top-right front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-right back
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y + halfSize); verticesA.push_back(C_z - 0.25f);  // Top-left back
+
+	// Bottom face
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-left front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-right front
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-left back
+
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z + 0.25f);  // Bottom-right front
+	verticesA.push_back(C_x + halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-right back
+	verticesA.push_back(C_x - halfSize); verticesA.push_back(C_y - halfSize); verticesA.push_back(C_z - 0.25f);  // Bottom-left back
 
 }
 
@@ -450,6 +505,8 @@ void keyCallbackPlayer(GLFWwindow* window, int key, int scancode, int action, in
 // Starting camera position and zoom factor
 glm::vec3 cameraPosition = glm::vec3(0.0f, 0.0f, 20.0f);
 float zoomFactor = 20.0f;
+float rotationAngleX = 0.0f;
+float rotationAngleY = 0.0f;
 
 
 void keyCallbackCamera(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -458,18 +515,22 @@ void keyCallbackCamera(GLFWwindow* window, int key, int scancode, int action, in
 
 		// Move along the X-axis
 		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-			cameraPosition.x -= 0.1f;  // left movement
+			//cameraPosition.x -= 0.1f;  // left movement
+			rotationAngleX -= 0.1f;
 		}
 		if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS) {
-			cameraPosition.x += 0.1f;  // right movement
+			//cameraPosition.x += 0.1f;  // right movement
+			rotationAngleX += 0.1f;
 		}
 
 		// Move along the Y-axis
 		if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS) {
-			cameraPosition.y -= 0.1f;  // down movement
+			//cameraPosition.y -= 0.1f;  // down movement
+			rotationAngleY -= 0.1f;
 		}
 		if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
-			cameraPosition.y += 0.1f;  // up movement
+			//cameraPosition.y += 0.1f;  // up movement
+			rotationAngleY += 0.1f;
 		}
 
 		// Zoom in and out (move along the Z axis)
@@ -776,6 +837,10 @@ int main(void)
 
 		// Model matrix
 		glm::mat4 Model = glm::mat4(1.0f);
+
+		View = glm::rotate(View, rotationAngleX, glm::vec3(0.5f, 0.0f, 0.0f)); // rotate around X 
+		View = glm::rotate(View, rotationAngleY, glm::vec3(0.0f, 0.5f, 0.0f)); // rotate around Y
+
 
 		// Calculate the MVP matrix
 		glm::mat4 MVP = Projection * View * Model;
